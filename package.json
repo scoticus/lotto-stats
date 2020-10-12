@@ -2,6 +2,7 @@
   "name": "lotto-stats",
   "version": "0.1.0",
   "dependencies": {
-    "faunadb": "^3.0.1"
+    "faunadb": "^3.0.1",
+    "node-fetch": "^2.6.1"
   }
 }

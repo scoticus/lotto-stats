@@ -1,5 +1,6 @@
 const faunadb = require('faunadb');
 const q = faunadb.query;
+const fetch = require('node-fetch');
 
 const client = new faunadb.Client({
   secret: process.env.FAUNADB_SECRET,
@@ -27,4 +28,12 @@ exports.handler = async (event, context) => {
     'https://www.national-lottery.co.uk/results/lotto/draw-history/draw-details/' +
     newDrawNo;
   console.log({ queryUrl });
+
+  // Fetch new result page content
+  let pageContent = await fetch(queryUrl).catch((error) =>
+    console.error(error)
+  );
+  const latestResultsPage = await pageContent.text();
+
+  console.log(latestResultsPage);
 };
