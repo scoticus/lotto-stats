@@ -1,4 +1,7 @@
 {
   "name": "lotto-stats",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "dependencies": {
+    "faunadb": "^3.0.1"
+  }
 }
