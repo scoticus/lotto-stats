@@ -3,7 +3,7 @@ addEventListener('scheduled', (event) => {
 });
 
 async function handleSchedule() {
-  const url = LOTTO_ENDPOINT;
+  const url = ENDPOINT;
   const authBody = {
     auth: TRIGGER_SECRET,
   };
