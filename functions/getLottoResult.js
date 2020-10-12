@@ -79,4 +79,11 @@ exports.handler = async (event, context) => {
     numbers,
     bonusNumber,
   };
+
+  // Write new results to DB
+  await client.query(
+    q.Create(q.Collection('lotto-results'), {
+      data: newResult,
+    })
+  );
 };
