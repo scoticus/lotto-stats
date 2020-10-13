@@ -26,7 +26,7 @@ exports.handler = async (event, context) => {
   const lastDrawNo = getLastDraw.data.drawNumber;
   const newDrawNo = parseInt(lastDrawNo) + 1;
   const queryUrl =
-    'https://www.national-lottery.co.uk/results/lotto/draw-history/draw-details/' +
+    'https://www.national-lottery.co.uk/results/euromillions/draw-history/' +
     newDrawNo;
   console.log({ queryUrl });
 
