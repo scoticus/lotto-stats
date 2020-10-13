@@ -29,9 +29,17 @@ Scripts require two envs to run
 
 ## Cron Timings
 
-| Draw  | Draw Time          | Scrape Time   | Cron           |
-| ----- | ------------------ | ------------- | -------------- |
-| Lotto | Wed 8pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU |
-| Lotto | Sat 8pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN |
+| Draw         | Draw Time             | Scrape Time   | Cron           |
+| ------------ | --------------------- | ------------- | -------------- |
+| Set For Life | Mon 8:00pm (UK local) | Tue 2am (UTC) | 0 02 \* \* TUE |
+| Thunderball  | Tue 8:15pm (UK local) | Wed 2am (UTC) | 0 02 \* \* WED |
+| EuroMillions | Tue 8:45pm (UK local) | Wed 2am (UTC) | 0 02 \* \* WED |
+| Lotto        | Wed 8:00pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU |
+| Thunderball  | Wed 8:15pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU |
+| Set For Life | Thu 8:00pm (UK local) | Fri 2am (UTC) | 0 02 \* \* FRI |
+| Thunderball  | Fri 8:15pm (UK local) | Sat 2am (UTC) | 0 02 \* \* SAT |
+| EuroMillions | Fri 8:45pm (UK local) | Sat 2am (UTC) | 0 02 \* \* SAT |
+| Lotto        | Sat 7:45pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN |
+| Thunderball  | Sat 8:15pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN |
 
 _I decided to trigger the scrapers a few hours after the draws take place to give time for the National Lottery website to update. You could almost certainly scrape closer to the draw but may want to add a check to handle any case where the page hasn't yet been updated._
