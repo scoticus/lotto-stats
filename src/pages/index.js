@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../../components/layout';
+import formatISODate from '../../utils/formatISODate';
 
 export default function Home({ data }) {
   const lottoResult = data.allLotto.nodes[0];
@@ -39,7 +40,7 @@ function TableGameRow({ gameResult }) {
     <tr>
       <td>{gameResult.internal.type}</td>
       <td>{gameResult.drawNumber}</td>
-      <td>{gameResult.date}</td>
+      <td>{formatISODate(gameResult.date)}</td>
       <td>{gameResult.jackpot}</td>
       <td>
         <ul>
