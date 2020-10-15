@@ -83,7 +83,12 @@ exports.handler = async (event, context) => {
     }
   }
 
-  const millionareMakerCode = $('#raffle_floater_0').attr('data-value');
+  const millionareMakerCode = $('#raffle_wrapper')
+    .contents()
+    .map(function (i, el) {
+      return $(this).attr('data-value');
+    })
+    .get();
 
   const newResult = {
     drawNumber,
