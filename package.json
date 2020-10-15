@@ -1,9 +1,16 @@
 {
   "name": "lotto-stats",
   "version": "0.1.0",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop"
+  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "faunadb": "^3.0.1",
-    "node-fetch": "^2.6.1"
+    "gatsby": "^2.24.78",
+    "node-fetch": "^2.6.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }
