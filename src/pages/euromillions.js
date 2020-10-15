@@ -2,10 +2,10 @@ import React from 'react';
 
 import Layout from '../../components/layout';
 
-export default function Home() {
+export default function EuroMillions() {
   return (
     <Layout>
-      <h1>Welcome to LottoStats</h1>
+      <h1>EuroMillions Results</h1>
     </Layout>
   );
 }
