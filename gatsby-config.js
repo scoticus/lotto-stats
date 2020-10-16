@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Lotto Stats',
+    titleTemplate: '%s | Lotto Stats',
+    description: 'Results for all draw based games from the National Lottery.',
+  },
   plugins: [
     {
       resolve: `gatsby-source-faunadb`,

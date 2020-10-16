@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import formatISODate from '../utils/formatISODate';
 import formatJackpot from '../utils/formatJackpot';
@@ -12,29 +13,32 @@ export default function Home({ data }) {
   const setForLifeResult = data.allSetForLife.nodes[0];
 
   return (
-    <Layout>
-      <h1>Welcome to LottoStats</h1>
-      <h2>Latest Results</h2>
-      <table>
-        <thead>
-          <tr>
-            <td>Game</td>
-            <td>Draw</td>
-            <td>Date</td>
-            <td>Jackpot</td>
-            <td>Numbers</td>
-            <td>Bonus</td>
-            <td>View all</td>
-          </tr>
-        </thead>
-        <tbody>
-          <TableGameRow gameResult={lottoResult} />
-          <TableGameRow gameResult={thunderballResult} />
-          <TableGameRow gameResult={euromillionsResult} />
-          <TableGameRow gameResult={setForLifeResult} />
-        </tbody>
-      </table>
-    </Layout>
+    <>
+      <SEO />
+      <Layout>
+        <h1>Welcome to LottoStats</h1>
+        <h2>Latest Results</h2>
+        <table>
+          <thead>
+            <tr>
+              <td>Game</td>
+              <td>Draw</td>
+              <td>Date</td>
+              <td>Jackpot</td>
+              <td>Numbers</td>
+              <td>Bonus</td>
+              <td>View all</td>
+            </tr>
+          </thead>
+          <tbody>
+            <TableGameRow gameResult={lottoResult} />
+            <TableGameRow gameResult={thunderballResult} />
+            <TableGameRow gameResult={euromillionsResult} />
+            <TableGameRow gameResult={setForLifeResult} />
+          </tbody>
+        </table>
+      </Layout>
+    </>
   );
 }
 

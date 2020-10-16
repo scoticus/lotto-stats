@@ -1,16 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import GameResultsTable from '../components/gameResultsTable';
 
 export default function Lotto({ data }) {
   const lottoResults = data.allLotto.nodes;
   return (
-    <Layout>
-      <h1>Lotto Results</h1>
-      <GameResultsTable results={lottoResults} />
-    </Layout>
+    <>
+      <SEO pageTitle="Lotto" />
+      <Layout>
+        <h1>Lotto Results</h1>
+        <GameResultsTable results={lottoResults} />
+      </Layout>
+    </>
   );
 }
 
