@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../../components/layout';
 import formatISODate from '../../utils/formatISODate';
+import formatJackpot from '../../utils/formatJackpot';
 
 export default function Home({ data }) {
   const lottoResult = data.allLotto.nodes[0];
@@ -42,7 +43,7 @@ function TableGameRow({ gameResult }) {
       <td>{gameResult.internal.type}</td>
       <td>{gameResult.drawNumber}</td>
       <td>{formatISODate(gameResult.date)}</td>
-      <td>{gameResult.jackpot}</td>
+      <td>{formatJackpot(gameResult.jackpot)}</td>
       <td>
         <ul>
           {gameResult.numbers.map((number) => (

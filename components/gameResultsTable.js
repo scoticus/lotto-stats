@@ -1,6 +1,7 @@
 import React from 'react';
 
 import formatISODate from '../utils/formatISODate';
+import formatJackpot from '../utils/formatJackpot';
 
 export default function GameResultsTable({ results }) {
   return (
@@ -21,7 +22,7 @@ export default function GameResultsTable({ results }) {
           <tr key={result.id}>
             <td>{result.drawNumber}</td>
             <td>{formatISODate(result.date)}</td>
-            <td>{result.jackpot}</td>
+            <td>{formatJackpot(result.jackpot)}</td>
             <td>{result.ballSet}</td>
             <td>{result.machine}</td>
             <td>
