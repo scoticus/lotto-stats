@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import formatISODate from '../utils/formatISODate';
@@ -24,6 +24,7 @@ export default function Home({ data }) {
             <td>Jackpot</td>
             <td>Numbers</td>
             <td>Bonus</td>
+            <td>View all</td>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +60,11 @@ function TableGameRow({ gameResult }) {
             ))}
           </ul>
         )}
+      </td>
+      <td>
+        <Link to={`/${gameResult.internal.type.toLowerCase()}`}>
+          View all {gameResult.internal.type} results
+        </Link>
       </td>
     </tr>
   );
