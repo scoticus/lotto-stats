@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../../components/layout';
-import formatISODate from '../../utils/formatISODate';
-import formatJackpot from '../../utils/formatJackpot';
+import Layout from '../components/layout';
+import formatISODate from '../utils/formatISODate';
+import formatJackpot from '../utils/formatJackpot';
 
 export default function Home({ data }) {
   const lottoResult = data.allLotto.nodes[0];

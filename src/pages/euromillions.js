@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../../components/layout';
-import GameResultsTable from '../../components/gameResultsTable';
+import Layout from '../components/layout';
+import GameResultsTable from '../components/gameResultsTable';
 
 export default function EuroMillions({ data }) {
   const euromillionsResults = data.allEuromillions.nodes;
