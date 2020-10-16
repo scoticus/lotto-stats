@@ -27,7 +27,7 @@ export default function GameResultsTable({ results }) {
             <td>{result.machine}</td>
             <td>
               {result.numbers.map((number) => (
-                <span id={number} style={{ padding: '0 5px' }}>
+                <span key={number} style={{ padding: '0 5px' }}>
                   {number}
                 </span>
               ))}
