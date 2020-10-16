@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 const linkStyles = {
   margin: '0 1rem',
 };
 
-export default function Layout({ buildDate, children }) {
+export default function Layout({ children }) {
+  const { currentBuildDate } = useStaticQuery(query);
+  const { currentDate } = currentBuildDate;
+
   return (
     <>
       <header>
@@ -30,7 +33,15 @@ export default function Layout({ buildDate, children }) {
       <main>
         <div>{children}</div>
       </main>
-      <footer>Last updated: {buildDate}</footer>
+      <footer>Site last updated: {currentDate}</footer>
     </>
   );
 }
+
+const query = graphql`
+  query {
+    currentBuildDate {
+      currentDate
+    }
+  }
+`;
