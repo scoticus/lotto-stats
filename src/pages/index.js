@@ -9,8 +9,9 @@ export default function Home({ data }) {
   const thunderballResult = data.allThunderball.nodes[0];
   const euromillionsResult = data.allEuromillions.nodes[0];
   const setForLifeResult = data.allSetForLife.nodes[0];
+  const buildDate = data.currentBuildDate.currentDate;
   return (
-    <Layout>
+    <Layout buildDate={buildDate}>
       <h1>Welcome to LottoStats</h1>
       <h2>Latest Results</h2>
       <table>
@@ -111,6 +112,9 @@ export const query = graphql`
         numbers
         bonusNumbers
       }
+    }
+    currentBuildDate {
+      currentDate
     }
   }
 `;

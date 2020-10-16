@@ -5,7 +5,7 @@ const linkStyles = {
   margin: '0 1rem',
 };
 
-export default function Layout({ children }) {
+export default function Layout({ buildDate, children }) {
   return (
     <>
       <header>
@@ -30,6 +30,7 @@ export default function Layout({ children }) {
       <main>
         <div>{children}</div>
       </main>
+      <footer>Last updated: {buildDate}</footer>
     </>
   );
 }

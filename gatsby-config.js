@@ -32,5 +32,14 @@ module.exports = {
         type: 'setForLife',
       },
     },
+    {
+      resolve: `gatsby-plugin-build-date`,
+      options: {
+        formatAsDateString: true,
+        formatting: {
+          format: 'DD MMM YYYY',
+        },
+      },
+    },
   ],
 };

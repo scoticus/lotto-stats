@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "dev": "gatsby develop"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "faunadb": "^3.0.1",
     "gatsby": "^2.24.78",
+    "gatsby-plugin-build-date": "^1.0.0",
     "gatsby-source-faunadb": "^1.0.0",
     "node-fetch": "^2.6.1",
     "react": "^16.14.0",
