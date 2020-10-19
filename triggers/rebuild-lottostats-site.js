@@ -4,7 +4,9 @@ addEventListener('scheduled', (event) => {
 
 async function handleSchedule() {
   const url = ENDPOINT;
-  let trigger = await fetch(url);
+  let trigger = await fetch(url, {
+    method: 'POST',
+  });
   console.log(trigger.status);
   return new Response('Rebuild LottoStats site', { status: 200 });
 }
