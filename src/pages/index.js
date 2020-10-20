@@ -1,10 +1,9 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
-import formatISODate from '../utils/formatISODate';
-import formatJackpot from '../utils/formatJackpot';
+import TableGameRow from '../components/TableGameRow';
 
 export default function Home({ data }) {
   const lottoResult = data.allLotto.nodes[0];
@@ -39,38 +38,6 @@ export default function Home({ data }) {
         </table>
       </Layout>
     </>
-  );
-}
-
-function TableGameRow({ gameResult }) {
-  return (
-    <tr>
-      <td>{gameResult.internal.type}</td>
-      <td>{gameResult.drawNumber}</td>
-      <td>{formatISODate(gameResult.date)}</td>
-      <td>{formatJackpot(gameResult.jackpot)}</td>
-      <td>
-        <ul>
-          {gameResult.numbers.map((number) => (
-            <li key={number}>{number}</li>
-          ))}
-        </ul>
-      </td>
-      <td>
-        {gameResult.bonusNumber || (
-          <ul>
-            {gameResult.bonusNumbers.map((number) => (
-              <li key={number}>{number}</li>
-            ))}
-          </ul>
-        )}
-      </td>
-      <td>
-        <Link to={`/${gameResult.internal.type.toLowerCase()}`}>
-          View all {gameResult.internal.type} results
-        </Link>
-      </td>
-    </tr>
   );
 }
 
