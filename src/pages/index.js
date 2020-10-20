@@ -15,27 +15,11 @@ export default function Home({ data }) {
     <>
       <SEO />
       <Layout>
-        <h1>Welcome to LottoStats</h1>
-        <h2>Latest Results</h2>
-        <table>
-          <thead>
-            <tr>
-              <td>Game</td>
-              <td>Draw</td>
-              <td>Date</td>
-              <td>Jackpot</td>
-              <td>Numbers</td>
-              <td>Bonus</td>
-              <td>View all</td>
-            </tr>
-          </thead>
-          <tbody>
-            <TableGameRow gameResult={lottoResult} />
-            <TableGameRow gameResult={thunderballResult} />
-            <TableGameRow gameResult={euromillionsResult} />
-            <TableGameRow gameResult={setForLifeResult} />
-          </tbody>
-        </table>
+        <h1>Latest Results</h1>
+        <TableGameRow gameResult={lottoResult} />
+        <TableGameRow gameResult={thunderballResult} />
+        <TableGameRow gameResult={euromillionsResult} />
+        <TableGameRow gameResult={setForLifeResult} />
       </Layout>
     </>
   );

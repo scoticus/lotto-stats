@@ -14,11 +14,15 @@ const Viewport = styled.div`
 
 const StyledHeader = styled.header`
   width: 100%;
-  max-width: 1200px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  div.logo {
+    font-size: 1.75rem;
+    font-weight: 900;
+  }
 
   nav {
     height: 100%;
@@ -36,6 +40,15 @@ const StyledFooter = styled.footer`
   align-items: center;
   padding: 0.4rem;
   font-size: 0.7rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const ButtonLink = styled(Link)`
@@ -48,6 +61,11 @@ const ButtonLink = styled(Link)`
 
   &:hover {
     background-color: #dcdcdc;
+    background-color: var(${(props) => props.hover});
+
+    &.contrast {
+      color: white;
+    }
   }
 `;
 
@@ -58,22 +76,34 @@ export default function Layout({ children }) {
   return (
     <Viewport>
       <StyledHeader>
-        <div>
+        <div className="logo">
           <ButtonLink to="/">LottoStats</ButtonLink>
         </div>
         <nav>
-          <ButtonLink to="/lotto">Lotto</ButtonLink>
-          <ButtonLink to="/thunderball">Thunderball</ButtonLink>
-          <ButtonLink to="/euromillions">EuroMillions</ButtonLink>
-          <ButtonLink to="/setforlife">SetForLife</ButtonLink>
+          <ButtonLink to="/lotto" hover="--lotto-red" className="contrast">
+            Lotto
+          </ButtonLink>
+          <ButtonLink
+            to="/thunderball"
+            hover="--thunderball-purple"
+            className="contrast"
+          >
+            Thunderball
+          </ButtonLink>
+          <ButtonLink to="/euromillions" hover="--euromillions-yellow">
+            EuroMillions
+          </ButtonLink>
+          <ButtonLink to="/setforlife" hover="--setforlife-blue">
+            SetForLife
+          </ButtonLink>
         </nav>
       </StyledHeader>
-      <main style={{ flexGrow: '1', padding: '10px' }}>
-        <div>{children}</div>
-      </main>
+      <main style={{ flexGrow: '1', padding: '10px' }}>{children}</main>
       <StyledFooter>
         <div>Site last updated: {currentDate}</div>
-        <div>Edit on Github</div>
+        <div>
+          <a href="https://github.com/scoticus/lotto-stats">Edit on Github</a>
+        </div>
       </StyledFooter>
     </Viewport>
   );
