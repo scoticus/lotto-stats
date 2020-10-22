@@ -1,6 +1,15 @@
 {
   "name": "lotto-stats",
   "version": "0.1.0",
+  "description": "A project using serverless functions to scrape National Lottery (UK) results and store them in FaunaDB.",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scoticus/lotto-stats"
+  },
+  "bugs": {
+    "url": "https://github.com/scoticus/lotto-stats/issues"
+  },
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
