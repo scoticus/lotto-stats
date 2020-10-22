@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
+import Heading from '../components/Heading';
 import GameResultsTable from '../components/gameResultsTable';
 
 export default function Thunderball({ data }) {
@@ -11,7 +12,7 @@ export default function Thunderball({ data }) {
     <>
       <SEO pageTitle="Thunderball" />
       <Layout>
-        <h1>Thunderball Results</h1>
+        <Heading label="Thunderball Results" />
         <GameResultsTable results={thunderballResults} />
       </Layout>
     </>

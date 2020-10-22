@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
+import Heading from '../components/Heading';
 import LatestGameResult from '../components/LatestGameResult';
 
 export default function Home({ data }) {
@@ -12,19 +12,11 @@ export default function Home({ data }) {
   const euromillionsResult = data.allEuromillions.nodes[0];
   const setForLifeResult = data.allSetForLife.nodes[0];
 
-  const FancyHeader = styled.h1`
-    max-width: 600px;
-    margin: 2vw auto;
-    border-bottom: 1px solid #b6c1cc;
-    font-weight: 400;
-    font-size: 1.6rem;
-  `;
-
   return (
     <>
       <SEO />
       <Layout>
-        <FancyHeader>Latest Results</FancyHeader>
+        <Heading label="Latest Results" />
         <LatestGameResult gameResult={lottoResult} />
         <LatestGameResult gameResult={thunderballResult} />
         <LatestGameResult gameResult={euromillionsResult} />

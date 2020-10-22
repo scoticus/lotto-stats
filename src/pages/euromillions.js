@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
+import Heading from '../components/Heading';
 import GameResultsTable from '../components/gameResultsTable';
 
 export default function EuroMillions({ data }) {
@@ -11,7 +12,7 @@ export default function EuroMillions({ data }) {
     <>
       <SEO pageTitle="EuroMillions" />
       <Layout>
-        <h1>EuroMillions Results</h1>
+        <Heading label="EuroMillions Results" />
         <GameResultsTable results={euromillionsResults} />
       </Layout>
     </>

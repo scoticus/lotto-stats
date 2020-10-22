@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
+import Heading from '../components/Heading';
 import GameResultsTable from '../components/gameResultsTable';
 
 export default function SetForLife({ data }) {
@@ -11,7 +12,7 @@ export default function SetForLife({ data }) {
     <>
       <SEO pageTitle="Set For Life" />
       <Layout>
-        <h1>SetForLife Results</h1>
+        <Heading label="SetForLife Results" />
         <GameResultsTable results={setForLifeResults} />
       </Layout>
     </>
