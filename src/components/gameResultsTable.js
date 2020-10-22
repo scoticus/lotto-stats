@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import IncompleteResults from './IncompleteResults';
 import Pagination from './Pagination';
 
 import formatISODate from '../utils/formatISODate';
@@ -15,6 +16,7 @@ export default function GameResultsTable({ results }) {
   return (
     // TODO: Styles below are temporary
     <div style={{ maxWidth: '600px', margin: 'auto' }}>
+      <IncompleteResults dateTo={results[results.length - 1].date} />
       <Pagination
         tablePage={tablePage}
         maxRows={maxRows}
