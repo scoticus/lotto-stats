@@ -97,6 +97,7 @@ const BonusBall = styled(Ball)`
 
 const thunderballStyles = css`
   background-color: var(--thunderball-purple);
+  box-shadow: 3px 3px 6px 1px rgba(188, 19, 173, 0.4);
   .ball {
     color: var(--thunderball-purple);
   }
@@ -104,6 +105,7 @@ const thunderballStyles = css`
 
 const lottoStyles = css`
   background-color: var(--lotto-red);
+  box-shadow: 3px 3px 6px 1px rgba(229, 1, 59, 0.4);
   .ball {
     color: var(--lotto-red);
   }
@@ -111,6 +113,7 @@ const lottoStyles = css`
 
 const setForLifeStyles = css`
   background-color: var(--setforlife-blue);
+  box-shadow: 3px 3px 6px 1px rgba(0, 214, 218, 0.4);
   color: var(--text-color);
   .ball {
     color: var(--setforlife-blue);
@@ -120,6 +123,7 @@ const setForLifeStyles = css`
 
 const euromillionsStyles = css`
   background-color: var(--euromillions-yellow);
+  box-shadow: 3px 3px 6px 1px rgba(248, 180, 0, 0.4);
   color: var(--text-color);
   .ball {
     color: var(--euromillions-yellow);
@@ -139,7 +143,7 @@ function capFirstLetter(string) {
   return firstLetter.toUpperCase() + string.slice(1);
 }
 
-export default function TableGameRow({ gameResult }) {
+export default function LatestGameResult({ gameResult }) {
   return (
     <ResultContainer game={gameResult.internal.type}>
       <Meta>

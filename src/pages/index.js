@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
-import TableGameRow from '../components/TableGameRow';
+import LatestGameResult from '../components/LatestGameResult';
 
 export default function Home({ data }) {
   const lottoResult = data.allLotto.nodes[0];
@@ -11,15 +12,23 @@ export default function Home({ data }) {
   const euromillionsResult = data.allEuromillions.nodes[0];
   const setForLifeResult = data.allSetForLife.nodes[0];
 
+  const FancyHeader = styled.h1`
+    max-width: 600px;
+    margin: 2vw auto;
+    border-bottom: 1px solid #b6c1cc;
+    font-weight: 400;
+    font-size: 1.6rem;
+  `;
+
   return (
     <>
       <SEO />
       <Layout>
-        <h1>Latest Results</h1>
-        <TableGameRow gameResult={lottoResult} />
-        <TableGameRow gameResult={thunderballResult} />
-        <TableGameRow gameResult={euromillionsResult} />
-        <TableGameRow gameResult={setForLifeResult} />
+        <FancyHeader>Latest Results</FancyHeader>
+        <LatestGameResult gameResult={lottoResult} />
+        <LatestGameResult gameResult={thunderballResult} />
+        <LatestGameResult gameResult={euromillionsResult} />
+        <LatestGameResult gameResult={setForLifeResult} />
       </Layout>
     </>
   );
