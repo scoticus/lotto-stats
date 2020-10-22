@@ -21,9 +21,11 @@ const StyledHeader = styled.header`
   align-items: center;
 
   div.logo {
-    font-size: 1.75rem;
-    font-weight: 900;
     letter-spacing: -1px;
+    a {
+      font-size: 1.75rem;
+      font-variation-settings: 'wght' 900;
+    }
   }
 
   nav {
@@ -36,7 +38,7 @@ const StyledHeader = styled.header`
     margin-top: 20px;
   }
 
-  @media (max-width: 620px) {
+  @media (max-width: 580px) {
     nav {
       width: 100%;
       flex-direction: column;
@@ -73,8 +75,11 @@ const ButtonLink = styled(Link)`
   margin: 0.5rem 1rem;
   border-radius: 6px;
   padding: 0.7rem 1.4rem;
+  padding: 0.6rem 1.2rem;
   text-decoration: none;
   color: inherit;
+  font-size: 0.95rem;
+  font-variation-settings: 'wght' 450;
   transition: 0.1s all;
 
   &:hover {

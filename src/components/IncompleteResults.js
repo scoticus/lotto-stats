@@ -16,10 +16,11 @@ const Container = styled.div`
 
   div:first-child {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     p {
-      margin: 0 1rem;
+      margin: 0;
       font-size: 1.4rem;
       font-variation-settings: 'wght' 600;
     }
@@ -30,6 +31,7 @@ export default function IncompleteResults({ dateTo }) {
   return (
     <Container>
       <div>
+        <p>Info</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -45,7 +47,6 @@ export default function IncompleteResults({ dateTo }) {
           <line x1="12" y1="8" x2="12" y2="12"></line>
           <line x1="12" y1="16" x2="12.01" y2="16"></line>
         </svg>
-        <p>Info</p>
       </div>
       <p>
         The result history for this game is incomplete. We currently have
