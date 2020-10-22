@@ -14,20 +14,38 @@ const Viewport = styled.div`
 
 const StyledHeader = styled.header`
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
   div.logo {
     font-size: 1.75rem;
     font-weight: 900;
+    letter-spacing: -1px;
   }
 
   nav {
     height: 100%;
     display: flex;
     align-items: center;
+  }
+
+  @media (max-width: 850px) {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 620px) {
+    nav {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+
+      a {
+        margin-left: 2.5rem;
+      }
+    }
   }
 `;
 
@@ -52,7 +70,7 @@ const StyledFooter = styled.footer`
 `;
 
 const ButtonLink = styled(Link)`
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
   border-radius: 6px;
   padding: 0.7rem 1.4rem;
   text-decoration: none;
