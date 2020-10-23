@@ -13,7 +13,7 @@ export default function Lotto({ data }) {
       <SEO pageTitle="Lotto" />
       <Layout>
         <Heading label="Lotto Results" />
-        <GameResultsTable results={lottoResults} />
+        <GameResultsTable results={lottoResults} game="lotto" />
       </Layout>
     </>
   );

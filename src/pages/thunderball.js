@@ -13,7 +13,7 @@ export default function Thunderball({ data }) {
       <SEO pageTitle="Thunderball" />
       <Layout>
         <Heading label="Thunderball Results" />
-        <GameResultsTable results={thunderballResults} />
+        <GameResultsTable results={thunderballResults} game="thunderball" />
       </Layout>
     </>
   );

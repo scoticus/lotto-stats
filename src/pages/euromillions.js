@@ -13,7 +13,7 @@ export default function EuroMillions({ data }) {
       <SEO pageTitle="EuroMillions" />
       <Layout>
         <Heading label="EuroMillions Results" />
-        <GameResultsTable results={euromillionsResults} />
+        <GameResultsTable results={euromillionsResults} game="euromillions" />
       </Layout>
     </>
   );

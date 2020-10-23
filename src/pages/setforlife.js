@@ -13,7 +13,7 @@ export default function SetForLife({ data }) {
       <SEO pageTitle="Set For Life" />
       <Layout>
         <Heading label="SetForLife Results" />
-        <GameResultsTable results={setForLifeResults} />
+        <GameResultsTable results={setForLifeResults} game="setForLife" />
       </Layout>
     </>
   );
