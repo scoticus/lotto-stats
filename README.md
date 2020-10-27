@@ -4,7 +4,7 @@
 
 Originally created to try out serverless functions, this project aims to scrape game results from the UK National Lottery website.
 
-It scrapes results for all four draw-based games:
+It collects results for all four draw-based games:
 
 - Lotto (Wed, Sat)
 - Thunderball (Tue, Wed, Fri, Sat)
@@ -17,7 +17,7 @@ _At some point I'll add a frontend into the mix so the results and game statisti
 
 This project uses Cloudflare Workers to trigger Netlify Functions that scrape the National Lottery website, parse and shape the results, and store them on FaunaDB.
 
-Further information on the triggers can be found in the [triggers directory](https://github.com/scoticus/lotto-stats/triggers)
+Further information on the triggers can be found in the [triggers directory](https://github.com/scoticus/lotto-stats/tree/main/triggers)
 
 ---
 

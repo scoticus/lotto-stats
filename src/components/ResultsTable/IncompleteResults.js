@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import formatISODate from '../utils/formatISODate';
+import formatISODate from '../../utils/formatISODate';
 
 const Container = styled.div`
   max-width: 300px;
