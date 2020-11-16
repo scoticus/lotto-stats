@@ -1,6 +1,6 @@
 # Scheduled Trigger Scripts
 
-The scripts in this folder are triggers for the scraping functions on Netlify. We want to be able to schedule the scraping scripts to run at a particular time but we can't do with Netlify by itself.
+The scripts in this folder are triggers for the scraping functions on Netlify and rebuilding the frontend using a Netlify build hook. We want to be able to schedule the scraping scripts to run at a particular time but we can't do with Netlify by itself.
 
 Instead we can use Cloudflare as it offers cron scheduling for workers.
 
@@ -20,7 +20,7 @@ Workers that use scheduled triggers can be tested while in the quick editor by g
 
 ## Environment Variables
 
-Scripts require two envs to run
+Scripts require two envs to run (the rebuild trigger only requires the ENDPOINT env)
 
 | Name           | Type           | Description                                                |
 | -------------- | -------------- | ---------------------------------------------------------- |
@@ -29,17 +29,18 @@ Scripts require two envs to run
 
 ## Cron Timings
 
-| Draw         | Draw Time             | Scrape Time   | Cron           |
-| ------------ | --------------------- | ------------- | -------------- |
-| Set For Life | Mon 8:00pm (UK local) | Tue 2am (UTC) | 0 02 \* \* TUE |
-| Thunderball  | Tue 8:15pm (UK local) | Wed 2am (UTC) | 0 02 \* \* WED |
-| EuroMillions | Tue 8:45pm (UK local) | Wed 2am (UTC) | 0 02 \* \* WED |
-| Lotto        | Wed 8:00pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU |
-| Thunderball  | Wed 8:15pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU |
-| Set For Life | Thu 8:00pm (UK local) | Fri 2am (UTC) | 0 02 \* \* FRI |
-| Thunderball  | Fri 8:15pm (UK local) | Sat 2am (UTC) | 0 02 \* \* SAT |
-| EuroMillions | Fri 8:45pm (UK local) | Sat 2am (UTC) | 0 02 \* \* SAT |
-| Lotto        | Sat 7:45pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN |
-| Thunderball  | Sat 8:15pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN |
+| Draw         | Draw Time             | Scrape Time   | Cron               |
+| ------------ | --------------------- | ------------- | ------------------ |
+| Set For Life | Mon 8:00pm (UK local) | Tue 2am (UTC) | 0 02 \* \* TUE     |
+| Thunderball  | Tue 8:15pm (UK local) | Wed 2am (UTC) | 0 02 \* \* WED     |
+| EuroMillions | Tue 8:45pm (UK local) | Wed 2am (UTC) | 0 02 \* \* WED     |
+| Lotto        | Wed 8:00pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU     |
+| Thunderball  | Wed 8:15pm (UK local) | Thu 2am (UTC) | 0 02 \* \* THU     |
+| Set For Life | Thu 8:00pm (UK local) | Fri 2am (UTC) | 0 02 \* \* FRI     |
+| Thunderball  | Fri 8:15pm (UK local) | Sat 2am (UTC) | 0 02 \* \* SAT     |
+| EuroMillions | Fri 8:45pm (UK local) | Sat 2am (UTC) | 0 02 \* \* SAT     |
+| Lotto        | Sat 7:45pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN     |
+| Thunderball  | Sat 8:15pm (UK local) | Sun 2am (UTC) | 0 02 \* \* SUN     |
+| Rebuild      | Tue - Sun 6am         | N/A           | 0 06 \* \* TUE-SUN |
 
 _I decided to trigger the scrapers a few hours after the draws take place to give time for the National Lottery website to update. You could almost certainly scrape closer to the draw but may want to add a check to handle any case where the page hasn't yet been updated._
