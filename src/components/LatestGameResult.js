@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
@@ -143,12 +144,23 @@ function capFirstLetter(string) {
   return firstLetter.toUpperCase() + string.slice(1);
 }
 
+const TitleLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export default function LatestGameResult({ gameResult }) {
   return (
     <ResultContainer game={gameResult.internal.type}>
       <Meta>
         <div>
-          <h2>{capFirstLetter(gameResult.internal.type)}</h2>
+          <TitleLink to={gameResult.internal.type.toLowerCase()}>
+            <h2>{capFirstLetter(gameResult.internal.type)}</h2>
+          </TitleLink>
           <p>{gameResult.drawNumber}</p>
         </div>
         <div>
