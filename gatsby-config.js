@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Lotto Stats',
     titleTemplate: '%s | Lotto Stats',
-    description: 'Results for all draw based games from the National Lottery.',
+    description:
+      'Get results for all National Lottery draw based games including Lotto, Thunderball, EuroMillions, and Set For Life.',
   },
   plugins: [
     {
